@@ -1,0 +1,9 @@
+{
+  "name": "blogpost-embeding-search",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

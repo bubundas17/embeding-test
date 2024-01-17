@@ -1,0 +1,47 @@
+<div class="container mx-auto px-4 mt-5">
+    <div class="flex justify-center">
+        <div class="w-full lg:w-2/3">
+            <div class="">
+
+                <div class="mb-4">
+                    <form action="/search" method="GET" class="flex items-center">
+                        <div class="flex-grow relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 pl-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                type="text" name="query" placeholder="Search..." value="{{query}}">
+                        </div>
+                        <button type="submit"
+                            class="ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class=" rounded pt-6 pb-8 mb-4">
+                <div class="container mx-auto px-4 py-8 bg-gray-100 my-12 rounded shadow-lg">
+                    <h1 class="text-4xl font-bold mb-4">{{post.title}}</h1>
+                    <p class="text-xl mb-2">By <span class="font-semibold">{{post.author}}</span></p>
+                    <div class="prose markdown">{{{post.content}}}</div>
+                    <textarea name="" id="" cols="30" rows="10">
+                        {{{markdown}}}
+                    </textarea>
+                    <div class="related-posts mt-8">
+                        <h2 class="text-2xl font-bold mb-4">Related Posts</h2>
+                        {{#each relatedPosts}}
+                        <div class="related-post mb-4">
+                            <a href="/posts/{{{this.id}}}" class="text-xl text-blue-500 underline">{{this.title}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

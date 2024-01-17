@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: ankane/pgvector
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 7EsEMi4vHbT3tL
+      POSTGRES_USER: root
